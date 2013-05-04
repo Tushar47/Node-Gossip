@@ -1,0 +1,37 @@
+#wrap {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.left {
+	float: left;
+	width: 75%;
+	overflow: scroll-y;
+	padding: 10px;
+	border: 1px solid #999;
+}
+
+#notification {
+	font-style: italic;
+	color: green;
+	text-align: center;
+	margin: 0;
+}
+
+#msgbox {	
+}
+
+#users {
+	position: fixed;
+	top: 10%;
+	left: 75%;
+	width: 10%;
+	height: 60%;
+	padding: 10px;
+	overflow: scroll-y;
+	border: 1px solid #999;
+}
+
+#data {	
+	width: 80%;
+}

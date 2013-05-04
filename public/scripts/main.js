@@ -1,62 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<title>Node Chat</title>
-<style>
-#wrap {
-	width: 80%;
-	margin: 0 auto;
-}
-
-.left {
-	float: left;
-	width: 75%;
-	overflow: scroll-y;
-	padding: 10px;
-	border: 1px solid #999;
-}
-
-#notification {
-	font-style: italic;
-	color: green;
-	text-align: center;
-	margin: 0;
-}
-
-#msgbox {	
-}
-
-#users {
-	position: fixed;
-	top: 10%;
-	left: 75%;
-	width: 10%;
-	height: 60%;
-	padding: 10px;
-	overflow: scroll-y;
-	border: 1px solid #999;
-}
-
-#data {	
-	width: 80%;
-}
-</style>
-<body>
-<div id="wrap">
-	<h1>Node Chat Demo</h1>
-	<div id="users">
-		<b>Online Users</b>
-		<div id="users"></div>
-	</div>
-	<div id="conversation" class="left"></div>
-	<div id="msgbox" class="left">
-		<input type="text" id="data" />
-	</div>
-</div>
-</body>
-<script src="/socket.io/socket.io.js"></script>
-<script src="jquery.min.js"> </script>
-<script>
 var socket = io.connect("http://localhost:8000/");
 
 // prompt for username on connection
@@ -99,5 +40,3 @@ $(function(){
 		}
 	});
 });
-</script>
-</html>

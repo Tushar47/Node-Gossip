@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<title>Node Chat</title>
+	<link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+	<div id="wrap">
+		<h1>Node Chat Demo</h1>
+		<div id="users">
+			<b>Online Users</b>
+			<div id="users"></div>
+		</div>
+		<div id="conversation" class="left"></div>
+		<div id="msgbox" class="left">
+			<input type="text" id="data" />
+		</div>
+	</div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"> </script>
+<script type="text/javascript">
+	if (typeof jQuery == 'undefined') {
+		document.write(unescape("%3Cscript src='/scripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+	}
+</script>
+<script src="/scripts/main.js"></script>
+</html>

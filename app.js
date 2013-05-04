@@ -1,10 +1,15 @@
-var app = require('express')(),
+var express = require('express'),
+	app = express(),
 	server = require('http').createServer(app).listen(8000),
 	io = require('socket.io').listen(server);
 	
 
 app.get('/', function(req, res) {
-	res.sendfile(__dirname + '/index.html');
+	res.sendfile(__dirname + '/public/index.html');
+});
+
+app.configure(function() {
+	app.use(express.static(__dirname + '/public'));
 });
 
 var users = {};
