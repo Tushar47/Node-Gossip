@@ -1,0 +1,10 @@
+{
+	"name": "Node Chat",
+	"description": "Chat application with socket.io",
+	"author": "Tushar Sonawane",
+	"version": "0.0.2",
+	"dependencies": {
+		"express": "*",
+		"socket.io": "*"
+	}
+}

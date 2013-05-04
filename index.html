@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<title>Node Chat</title>
+<style>
+#wrap {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.left {
+	float: left;
+	width: 75%;
+	overflow: scroll-y;
+	padding: 10px;
+	border: 1px solid #999;
+}
+
+#notification {
+	font-style: italic;
+	color: green;
+	text-align: center;
+	margin: 0;
+}
+
+#msgbox {	
+}
+
+#users {
+	position: fixed;
+	top: 10%;
+	left: 75%;
+	width: 10%;
+	height: 60%;
+	padding: 10px;
+	overflow: scroll-y;
+	border: 1px solid #999;
+}
+
+#data {	
+	width: 80%;
+}
+</style>
+<body>
+<div id="wrap">
+	<h1>Node Chat Demo</h1>
+	<div id="users">
+		<b>Online Users</b>
+		<div id="users"></div>
+	</div>
+	<div id="conversation" class="left"></div>
+	<div id="msgbox" class="left">
+		<input type="text" id="data" />
+	</div>
+</div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="jquery.min.js"> </script>
+<script>
+var socket = io.connect("http://localhost:8000/");
+
+// prompt for username on connection
+
+socket.on('connect', function(){	
+	var user = prompt("What's your name?") || "Bond";
+	socket.emit('adduser', user); // tell server to add user
+});
+
+// listener for new message
+socket.on('updatechat', function (username, message) {
+	$('#conversation').append('<b>'+username + ':</b> ' + message + '<br>');
+});
+
+// listener, for notifications
+socket.on('notification', function(message) {
+	$('#conversation').append('<p id="notification">' + message + '</p>');
+});
+
+// listener, online users
+socket.on('updateusers', function(users) {
+	$('#users').empty();
+	$('#users').append('<b>Online Users</b>');
+	$.each(users, function(key, value) {
+		$('#users').append('<div>' + key + '</div>');
+	});
+});
+
+
+$(function(){
+	$('#data').keypress(function(e) {
+		if(e.which == 13) {
+			var message = $('#data').val()
+			// send chat message
+			if(message.length != 0) 
+				socket.emit('sendchat', message);
+			else
+				alert("No Doughnuts for you!!, Enter a valid Text");
+			$(this).val("");
+		}
+	});
+});
+</script>
+</html>
