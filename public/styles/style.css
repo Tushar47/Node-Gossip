@@ -5,33 +5,39 @@
 
 .left {
 	float: left;
-	width: 75%;
-	overflow: scroll-y;
-	padding: 10px;
-	border: 1px solid #999;
 }
 
 #notification {
 	font-style: italic;
 	color: green;
 	text-align: center;
-	margin: 0;
+	margin: 0;	
 }
 
-#msgbox {	
+#msgbox {
+	box-sizing: border-box;
+	width: 70%;
+}
+
+#conversation {
+	border: 1px solid #999;
+	height: 400px;
+	padding: 10px 10px 10px 20px;
+	overflow: auto;
+	width: 100%;
 }
 
 #users {
-	position: fixed;
-	top: 10%;
-	left: 75%;
+	float: left;
 	width: 10%;
 	height: 60%;
 	padding: 10px;
-	overflow: scroll-y;
 	border: 1px solid #999;
 }
 
 #data {	
-	width: 80%;
+	width: 100%;
+	float: left;
+	margin-bottom: 15px;
+	padding: 5px 10px;
 }

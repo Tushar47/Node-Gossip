@@ -4,17 +4,18 @@ var socket = io.connect("http://localhost:8000/");
 
 socket.on('connect', function(){	
 	var user = prompt("What's your name?") || "Bond";
+	$('#data').focus();
 	socket.emit('adduser', user); // tell server to add user
 });
 
 // listener for new message
 socket.on('updatechat', function (username, message) {
-	$('#conversation').append('<b>'+username + ':</b> ' + message + '<br>');
+	$('#conversation').prepend('<b>'+username + ':</b> ' + message + '<br>');
 });
 
 // listener, for notifications
 socket.on('notification', function(message) {
-	$('#conversation').append('<p id="notification">' + message + '</p>');
+	$('#conversation').prepend('<p id="notification">' + message + '</p>');
 });
 
 // listener, online users
