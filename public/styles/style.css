@@ -1,10 +1,96 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	background-color: #efefef;
+}
+
+h1 {
+	font-size: 38.5px;
+	font-weight: bold;
+	line-height: 40px;
+	margin: 10px 0;
+}
+
+/*
+	Grid Style
+*/
+.grid {
+  margin: 0 0 20px 0;
+}
+.grid:after {
+  /* Or @extend clearfix */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Opt-in outside padding */
+.grid-pad {
+  padding: 20px 0 20px 20px;
+}
+.grid-pad [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+
+
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+}
+.grid [class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+.col-2-3 {
+  width: 75%;
+}
+
+.col-1-3 {
+  width: 25%;
+}
+
+.module {
+  
+}
+
+
+/*
+	Main Styles
+*/
+#users, #conversation, input[type="text"] {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+	font-size: 14px;
+	color: #555;	
+}
+
+input[type="text"] {
+	height: 20px;
+	padding: 4px 6px;
+	line-height: 20px;
+	display: inline-block;
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+
+.page-header {
+	padding-bottom: 9px;
+	margin: 20px 0 30px;
+}
+
 #wrap {
 	width: 80%;
 	margin: 0 auto;
-}
-
-.left {
-	float: left;
 }
 
 #notification {
@@ -15,29 +101,35 @@
 }
 
 #msgbox {
-	box-sizing: border-box;
-	width: 70%;
+
 }
 
 #conversation {
-	border: 1px solid #999;
-	height: 400px;
+	min-height: 400px;
 	padding: 10px 10px 10px 20px;
 	overflow: auto;
 	width: 100%;
 }
 
 #users {
-	float: left;
-	width: 10%;
-	height: 60%;
+	max-height: 400px;
 	padding: 10px;
-	border: 1px solid #999;
 }
 
-#data {	
+#data {
+	padding: 20px 10px;
 	width: 100%;
-	float: left;
-	margin-bottom: 15px;
-	padding: 5px 10px;
+}
+
+@media only screen and (max-width: 1023px) {
+	#wrap {
+		width: 100%
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	[class*='col-'] {
+	  width: 100%;
+	  padding-right: 0px;
+	}
 }
