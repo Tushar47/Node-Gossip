@@ -1,8 +1,9 @@
 {
-	"name": "Node Chat",
+	"name": "Node-Gossip",
+	"version": "0.0.2",
 	"description": "Chat application with socket.io",
 	"author": "Tushar Sonawane",
-	"version": "0.0.2",
+	"main": "app.js",
 	"dependencies": {
 		"express": "*",
 		"socket.io": "*"
