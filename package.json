@@ -5,7 +5,11 @@
 	"author": "Tushar Sonawane",
 	"main": "app.js",
 	"dependencies": {
-		"express": "*",
+		"express": "3.2.x",
 		"socket.io": "*"
+	},
+	"engines": {
+		"node": "0.10.x",
+		"npm": "1.2.x"
 	}
 }

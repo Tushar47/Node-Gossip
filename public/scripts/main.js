@@ -1,9 +1,10 @@
-var socket = io.connect("http://localhost:8000/");
+var socket = io.connect(window.location.hostname);
 
 // prompt for username on connection
 
 socket.on('connect', function(){	
-	var user = prompt("What's your name?") || "Bond";
+	var user = prompt("What's your name?") || location.reload();
+
 	$('#data').focus();
 	socket.emit('adduser', user); // tell server to add user
 });

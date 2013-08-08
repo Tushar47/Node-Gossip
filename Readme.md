@@ -8,10 +8,13 @@ Node Gossip is a chat application developed for fun. My moto behind developing t
 Clone the git repo - `git clone git://github.com/Tushkiz/Node-Gossip.git`  - or [download it](https://github.com/Tushkiz/Node-Gossip/archive/master.zip)
 
 
-## Features
+## Todo
 
-* Many can join the conversation.
-* More Coming Soon :P
+* Separate Chat Rooms.
+* Gravatar Integration. [staged]
+* Flat UI. [staged]
+* Option for saving Conversations.
+* Video with WebRTC
 
 
 ## Contributing
